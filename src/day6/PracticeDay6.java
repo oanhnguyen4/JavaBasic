@@ -33,22 +33,21 @@ public class PracticeDay6 {
 	}
 	public void doEx8() {
 		int n = 7;
-		char[][] squareBoard = new char[n][n];
-		
-		for (int i = 0; i < n; i++) {  
-		    for (int j = 0; j < n; j++) {  
-		    	squareBoard[i][i] = ((i+j) % 2 == 0) ? '#' : ' ';
-		    	
-		    }
-		    for (int i1 = 0; i1 < n; i1++) { 
-		    	for (int j = 0; j < n; j++) { 
-		    		System.out.print(squareBoard[i1][j] + " ");
+		String[][] squareBoard = new String[n][n];
+				
+		for (int i = 0; i < squareBoard.length; i++) { 
+			boolean isOddRow = (i % 2 == 1);
+			for (int j = 0; j < squareBoard[0].length; j++) {  
+		    	if (isOddRow) {
+		    		squareBoard[i][j]= " #";
 		    	}
-		    	System.out.println(); // Xuống dòng sau mỗi hàng 
-		    }
-		    
-		     
+		    	else {
+		    		squareBoard[i][j]= "# ";
+		    	}
+
+	    		System.out.print(squareBoard[i][j]);
+			}  
+			System.out.println(); // Xuống dòng sau mỗi hàng  
 		}
-		
 	}
 }
